@@ -38,8 +38,9 @@ echo 'New commits being pulled:' 1>&1
 git log upstream/"${INPUT_TARGET_BRANCH}" "${LOCAL_COMMIT_HASH}"..HEAD --pretty=oneline
 
 # pull from upstream to target_branch
+git config pull.rebase false
 echo 'Pulling...' 1>&1
-git pull upstream --ff-only "${INPUT_UPSTREAM_BRANCH}"
+git pull upstream "${INPUT_UPSTREAM_BRANCH}"
 echo 'Pull successful' 1>&1
 
 # push to origin target_branch
