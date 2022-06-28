@@ -40,6 +40,7 @@ git log upstream/"${INPUT_TARGET_BRANCH}" "${LOCAL_COMMIT_HASH}"..HEAD --pretty=
 # pull from upstream to target_branch
 git config pull.rebase false
 echo 'Pulling...' 1>&1
+echo git pull upstream "${INPUT_UPSTREAM_BRANCH}" --no-rebase
 git pull upstream "${INPUT_UPSTREAM_BRANCH}" --no-rebase
 echo 'Pull successful' 1>&1
 
